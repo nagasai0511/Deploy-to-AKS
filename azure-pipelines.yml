@@ -55,11 +55,4 @@ stages:
               buildType: 'current'
               artifactName: 'manifests'
               targetPath: '$(Pipeline.Workspace)/manifests'
-          - task: KubernetesManifest@0
-            inputs:
-              action: 'createSecret'
-              kubernetesServiceConnection: 'akservice'
-              namespace: 'default'
-              secretType: 'dockerRegistry'
-              secretName: '$(acrsecret)'
-              dockerRegistryEndpoint: 'acregistryapp'
+
